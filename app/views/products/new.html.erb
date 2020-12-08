@@ -1,0 +1,23 @@
+<%= simple_form_for @product, url: products_path, method: :post do |f| %>
+  <%= f.label :name, "Nombre:" %>
+  <%= f.input :name, label: false  %>
+  <%= f.label :category, "Categoría:" %>
+  <%= f.select(:category, ['Zapatos','Poleras'])%>
+  <%= f.simple_fields_for :variants do |b| %>
+    <div id="fieldsetContainer">
+      <fieldset id="0">
+        <%= b.label :color, "Color:" %>
+        <%= b.select(:color, ['Azul','Amarillo','Rojo'])%>
+        <%= b.label :size, "Talla:" %>
+        <%= b.select(:size, ['XL','L','M','S'])%>
+        <%= content_tag(:a, 'Borrar', id: "del-"+b.index.to_s, class:"badge badge-danger align-self-center")  %>
+      </fieldset>
+    </div>
+  <% end%>
+  <%= f.button :submit %>
+<% end%>
+<button id="addVariant">Add more variants</button>
+
+<% if request.query_parameters[:error] %>
+  <p><%= request.query_parameters[:error][0] %></p>
+<% end %>

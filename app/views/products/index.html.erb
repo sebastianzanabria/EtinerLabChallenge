@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>Id Producto</th>
+    <th>Nombre</th>
+    <th>Categoría</th>
+    <th>Variantes</th>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td> <%= product.id %> </td>
+        <td> <%= product.name %> </td>
+        <td> <%= product.category %> </td>
+        <td> <%= button_to "Variantes", product_path(id: product.id), method: :get%> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
