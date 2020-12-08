@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Please, follow the next steps:
 
-Things you may want to cover:
+* Enable your Postgres database
 
-* Ruby version
+* `rails db:reset`
 
-* System dependencies
+* Go to `http://localhost:3000/`
 
-* Configuration
+* You will be redirect to the main form
 
-* Database creation
+* If youy submit a valid input
 
-* Database initialization
+* You can see the table of products in "Productos" anchor tag
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* You can see the variants of each product clicking "Variantes" buttons in "Productos" table.
